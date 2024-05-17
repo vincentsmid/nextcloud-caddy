@@ -1,0 +1,12 @@
+your_domain_here.tld {
+    root * /var/www/html
+    file_server
+
+    php_fastcgi app:9000
+    encode gzip
+
+    @http {
+        protocol http
+    }
+    redir @http https://your-domain-here.tld
+}
